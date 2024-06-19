@@ -40,3 +40,11 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+      +database: '{{env_var("DBT_SNOWFLAKE_DB") }}'
+      +schema: '{{env_var("DBT_SNOWFLAKE_SCHEMA") }}'
+    Dimensions:
+      +materialized: table
+      +database: '{{env_var("DBT_SNOWFLAKE_DB") }}'
+      +schema: '{{env_var("DBT_SNOWFLAKE_SCHEMA") }}' 
+      +transient: false   
+
