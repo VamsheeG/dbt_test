@@ -47,4 +47,8 @@ models:
       +database: '{{env_var("DBT_SF_HMS_DB") }}'
       +schema: '{{env_var("DBT_SF_HMS_STG_SCHEMA") }}' 
       +transient: false   
-
+    Dim_cur:
+      +materialized: table
+      +database: '{{env_var("DBT_SF_HMS_DB") }}'
+      +schema: '{{env_var("DBT_SF_HMS_CUR_SCHEMA") }}' 
+      +transient: false 

@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw # this is the source_name
+    database: '{{env_var("DBT_SF_HMS_DB") }}'
+    schema: '{{ env_var("DBT_SF_HMS_RAW_SCHEMA") }}'
+
+    tables:
+      - name: hmsallergydata # this is the table_name
+        identifier: allergies # actual table name
+        description: allergies patients raw stage dbt model
+        columns:
+          - name: Id
+            description: The primary key for this table
