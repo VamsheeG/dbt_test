@@ -12,8 +12,9 @@ sources:
         columns:
           - name: deptno
             description: primary key of the table
-            data_tests:
+            tests:
               - not_null
               - unique
               - accepted_values:
                   values: [10,20,30,40,50]
+              
