@@ -6,9 +6,10 @@ sources:
     schema: '{{ env_var("DBT_SF_HMS_RAW_SCHEMA") }}'
 
     tables:
-      - name: hmspatientdata # this is the table_name
-        identifier: patients # actual table name
-        description: patients raw stage dbt model
+      - name: hmsfctallergydata # this is the table_name
+        identifier: allergies # actual table name
+        description: allergies patients raw stage dbt model
         columns:
           - name: Id
             description: The primary key for this table
+
