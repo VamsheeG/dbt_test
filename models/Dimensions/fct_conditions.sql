@@ -1,12 +1,6 @@
 {{ config (materialized='incremental',
   unique_key = ['PATIENT','ENCOUNTER','DIM_ID']  )}}
 
-{% if is_incremental() %}
- {%set max_id = "(select max(id) from " ~ this ~ ")" %}
-{% else %}
- {%set max_id =0 %}
-{% endif %}
-
 with source_data as (
 select ZSTART as "START",STOP,PATIENT,ENCOUNTER,CODE,DESCRIPTION
  from {{ source('raw','conditionsfctdata')}}
@@ -28,6 +22,7 @@ tgt_data as (
 {% else %}
  {%set max_id =0 %}
 {% endif %}
+
 select {{max_id}} + row_number() over (order by s."START" ) as id,
 "START", s.STOP,s.PATIENT,s.ENCOUNTER,sd.dim_id,sd.SEVERITY_TYPE
 from source_data s
