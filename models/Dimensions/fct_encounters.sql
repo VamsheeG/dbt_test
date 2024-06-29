@@ -1,0 +1,7 @@
+with source_data as (
+select Id ,ZSTART as "START" ,STOP ,PATIENT ,ORGANIZATION ,PROVIDER ,PAYER ,ENCOUNTERCLASS ,CODE ,DESCRIPTION ,
+BASE_ENCOUNTER_COST ,TOTAL_CLAIM_COST ,PAYER_COVERAGE ,REASONCODE ,REASONDESCRIPTION
+  from {{ source('raw','encountersdata')}}
+)
+select *
+from source_data
