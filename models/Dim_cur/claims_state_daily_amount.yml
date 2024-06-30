@@ -1,0 +1,6 @@
+version: 2
+
+sources:
+  - name: raw # this is the source_name
+    database: '{{env_var("DBT_SF_HMS_DB") }}'
+    schema: '{{ env_var("DBT_SF_HMS_CUR_SCHEMA") }}'
