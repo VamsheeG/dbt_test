@@ -3,4 +3,4 @@ select *
   from {{ ref('top_diagnosed_conditions') }} 
 )
 select *
-from source_data 
+from source_data  

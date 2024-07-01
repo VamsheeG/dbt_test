@@ -3,4 +3,4 @@ select *
   from {{ ref('vaccination_coverage_rate') }} 
 )
 select *
-from source_data 
+from source_data

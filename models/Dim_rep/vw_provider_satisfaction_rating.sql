@@ -3,4 +3,4 @@ select *
   from {{ ref('chronic_conditions') }} 
 )
 select *
-from source_data 
+from source_data

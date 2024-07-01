@@ -3,4 +3,4 @@ select *
   from {{ ref('total_claims_amount') }} 
 )
 select *
-from source_data 
+from source_data

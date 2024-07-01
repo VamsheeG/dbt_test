@@ -3,4 +3,4 @@ select *
   from {{ ref('post_vaccination_health_outcomes') }} 
 )
 select *
-from source_data 
+from source_data  

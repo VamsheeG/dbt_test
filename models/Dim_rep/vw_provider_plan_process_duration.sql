@@ -3,4 +3,4 @@ select *
   from {{ ref('provider_plan_process_duration') }} 
 )
 select *
-from source_data 
+from source_data  
