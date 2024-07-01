@@ -3,4 +3,4 @@ select *
   from {{ ref('patient_visit_frequency') }} 
 )
 select *
-from source_data 
+from source_data   
