@@ -10,5 +10,23 @@ sources:
         identifier: allergies # actual table name
         description: allergies patients raw stage dbt model
         columns:
-          - name: Id
+          - name: CODE
             description: The primary key for this table
+
+models:
+  - name: dim_allergies
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns:
+          - CODE
+          - DESCRIPTION
+          - TYPE
+          - CATEGORY
+    description: ""
+    columns:
+      - name: CODE
+        description: ""
+        tests:
+          - unique
+          - not_null
+        

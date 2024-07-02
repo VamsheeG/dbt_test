@@ -8,7 +8,79 @@ sources:
     tables:
       - name: hmsclaimsdata # this is the table_name
         identifier: claims # actual table name
-        description: claims raw stage dbt model
+        description: claims model
         columns:
           - name: Id
             description: The primary key for this table
+
+models:
+  - name: dim_claims
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name : id
+        data_type :  varchar
+        tests:
+          - unique
+          - not_null
+      - name : patientid
+        data_type :  varchar
+      - name : providerid
+        data_type :  varchar
+      - name : primarypatientinsuranceid
+        data_type :  varchar
+      - name : secondarypatientinsuranceid
+        data_type :  varchar
+      - name : departmentid
+        data_type :  number
+      - name : patientdepartmentid
+        data_type :  number
+      - name : diagnosis1
+        data_type :  number
+      - name : diagnosis2
+        data_type :  number
+      - name : diagnosis3
+        data_type :  number
+      - name : diagnosis4
+        data_type :  number
+      - name : diagnosis5
+        data_type :  number
+      - name : diagnosis6
+        data_type :  number
+      - name : diagnosis7
+        data_type :  number
+      - name : diagnosis8
+        data_type :  number
+      - name : referringproviderid
+        data_type :  varchar
+      - name : appointmentid
+        data_type :  varchar
+      - name : currentillnessdate
+        data_type :  timestamp_ntz
+      - name : servicedate
+        data_type :  timestamp_ntz
+      - name : supervisingproviderid
+        data_type :  varchar
+      - name : status1
+        data_type :  varchar
+      - name : status2
+        data_type :  varchar
+      - name : statusp
+        data_type :  varchar
+      - name : outstanding1
+        data_type :  number
+      - name : outstanding2
+        data_type :  number
+      - name : outstandingp
+        data_type :  number
+      - name : lastbilleddate1
+        data_type :  timestamp_ntz
+      - name : lastbilleddate2
+        data_type :  timestamp_ntz
+      - name : lastbilleddatep
+        data_type :  timestamp_ntz
+      - name : healthcareclaimtypeid1
+        data_type :  number
+      - name : healthcareclaimtypeid2
+        data_type :  number

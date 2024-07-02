@@ -12,3 +12,35 @@ sources:
         columns:
           - name: Id
             description: The primary key for this table
+
+models:
+  - name: dim_organizations
+    config:
+      contract:
+        on_schema_change: append_new_columns
+    columns:
+      - name : id
+        data_type :  varchar
+        tests:
+          - unique
+          - not_null
+      - name : name
+        data_type: varchar
+      - name : address
+        data_type: varchar
+      - name : city
+        data_type: varchar
+      - name : state
+        data_type: varchar
+      - name : zip
+        data_type: number
+      - name : lat
+        data_type: number
+      - name : lon
+        data_type: number
+      - name : phone
+        data_type: varchar
+      - name : revenue
+        data_type: number
+      - name : utilization
+        data_type: number

@@ -9,3 +9,12 @@ sources:
       - name: conditionsdata # this is the table_name
         identifier: conditions # actual table name
         description: conditions raw stage dbt model
+
+models:
+  - name: dim_conditions
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns:
+          - CODE
+          - DESCRIPTION
+          - SEVERITY_TYPE
